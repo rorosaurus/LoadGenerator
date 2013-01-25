@@ -15,8 +15,8 @@ sites = ["http://www.google.com/", "http://www.yahoo.com/", "http://www.facebook
 while True:
 
 	# Ramp up some CPU cycles
-	for i in range(0,9999):
-		for j in range(0,9999):
+	for i in range(0,random.randint(5000,9999)):
+		for j in range(0,random.randint(5000,9999)):
 			load = i + j
 
 	# Make an http request
@@ -27,5 +27,5 @@ while True:
 		load = "http request failed"
 
 	# Wait a random amount of time between 4 and 8 hours
-	length = random.randint(14400,28800)
+	length = random.randint(60*60*4,60*60*8)
 	time.sleep(length)
