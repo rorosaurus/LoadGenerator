@@ -21,8 +21,8 @@ while True:
 		for j in range(0,jsize):
 			load = i + j
 
-	# Only use network 1/3 of the time
-	if random.randint(0,2) == 0:
+	# Only use network 1/2 of the time
+	if random.randint(0,1) == 0:
 		# Make an http request
 		try:
 			url = sites[random.randint(0,len(sites)-1)]
@@ -30,6 +30,6 @@ while True:
 		except urllib2.URLError as error:
 			load = "http request failed"
 
-	# Wait a random amount of time between 4 and 12 hours
-	length = random.randint(60*60*4,60*60*12)
+	# Wait a random amount of time between 4 and 8 hours
+	length = random.randint(60*60*4,60*60*8)
 	time.sleep(length)
